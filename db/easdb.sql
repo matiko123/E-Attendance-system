@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2024 at 03:44 PM
+-- Generation Time: Jul 05, 2024 at 02:04 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `easdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(60) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+(1, 'admin@gmail.com', 'admin');
 
 -- --------------------------------------------------------
 
@@ -42,18 +61,19 @@ CREATE TABLE `attendance` (
 INSERT INTO `attendance` (`id`, `registration_no`, `booklet_no`, `exam`, `time`) VALUES
 (5, 'IMC/BIT/11223344', 12123322, 7, '2024-05-31 21:22:09'),
 (6, 'IMC/BIT/11223344', 12123322, 7, '2024-05-31 21:22:10'),
-(7, 'IMC/BIT/11223344', 12123322, 7, '2024-06-01 05:41:39'),
-(8, 'IMC/BIT/11223344', 12123322, 7, '2024-06-01 07:00:18'),
-(9, 'IMC/BIT/11223344', 12123322, 7, '2024-06-01 07:01:03'),
-(10, 'IMC/BIT/11223344', 12123322, 7, '2024-06-01 07:01:11'),
-(11, 'IMC/BIT/11223344', 12123322, 7, '2024-06-01 07:41:08'),
-(12, 'IMC/BIT/11223344', 12123322, 7, '2024-06-01 07:45:56'),
-(13, 'IMC/BIT/11223344', 12123322, 7, '2024-06-01 07:48:28'),
-(14, 'IMC/BIT/11223344', 12123322, 0, '2024-06-01 10:31:48'),
-(15, 'IMC/BIT/11223344', 12123322, 0, '2024-06-01 10:34:05'),
-(16, 'IMC/BIT/11223344', 12123322, 0, '2024-06-01 10:38:35'),
-(17, 'IMC/BIT/11223344', 12123322, 0, '2024-06-01 10:40:31'),
-(18, 'IMC/BIT/11223344', 12123322, 0, '2024-06-01 10:40:53');
+(7, 'IMC/BIT/11223344', 12123322, 12, '2024-06-01 05:41:39'),
+(8, 'IMC/BIT/11223344', 12123322, 6, '2024-06-01 07:00:18'),
+(9, 'IMC/BIT/11223344', 12123322, 11, '2024-06-01 07:01:03'),
+(10, 'IMC/BIT/11223344', 12123322, 8, '2024-06-01 07:01:11'),
+(11, 'IMC/BIT/11223344', 12123322, 21, '2024-06-01 07:41:08'),
+(12, 'IMC/BIT/11223344', 12123322, 14, '2024-06-01 07:45:56'),
+(13, 'IMC/BIT/11223344', 12123322, 14, '2024-06-01 07:48:28'),
+(14, 'IMC/BIT/11223344', 12123322, 10, '2024-06-01 10:31:48'),
+(15, 'IMC/BIT/11223344', 12123322, 11, '2024-06-01 10:34:05'),
+(16, 'IMC/BIT/11223344', 12123322, 21, '2024-06-01 10:38:35'),
+(17, 'IMC/BIT/11223344', 12123322, 20, '2024-06-01 10:40:31'),
+(18, 'IMC/BIT/11223344', 12123322, 18, '2024-06-01 10:40:53'),
+(19, 'IMC/BIT/11223344', 12123322, 18, '2024-06-12 19:44:16');
 
 -- --------------------------------------------------------
 
@@ -87,7 +107,18 @@ INSERT INTO `exam` (`id`, `examiner`, `programme`, `year`, `semester`, `code`, `
 (9, 2, 'BIRM', 1, 1, 'ATU112233', 'INSURANCE ', 'TH_C', '2024-06-01 00:41:05'),
 (10, 2, 'BIRM', 1, 1, 'ATU112233', 'INSURANCE ', 'TH_C', '2024-06-01 00:48:23'),
 (11, 2, 'BIRM', 1, 1, 'ATU112233', 'INSURANCE ', 'TH_C', '2024-06-01 00:59:39'),
-(12, 1, 'BAC', 2, 2, 'BCU112233', 'islamic accountant', 'lab5', '2024-06-01 03:31:45');
+(12, 1, 'BAC', 2, 2, 'BCU112233', 'islamic accountant', 'lab5', '2024-06-01 03:31:45'),
+(13, 1, 'BIRM', 1, 1, 'ITU07108', 'Lorem Ipsum', 'TH_L', '2024-06-11 00:04:21'),
+(14, 1, 'BCS', 1, 1, 'AFU08771', 'Lorem Ipsum', 'lab5', '2024-06-12 12:44:02'),
+(15, 1, 'BAC', 1, 1, 'AFU08771', 'islamic accountant', 'TH_C', '2024-06-13 12:41:41'),
+(16, 1, 'BAC', 1, 1, 'BCU112233', 'advanced web', 'lab6', '2024-06-15 12:35:06'),
+(17, 1, 'BAC', 1, 1, 'ITU07108', 'islamic accountant', 'lab5', '2024-07-04 11:27:41'),
+(18, 1, 'BIRM', 1, 1, 'ATU112233', 'INSURANCE ', 'lab6', '2024-07-04 12:20:42'),
+(19, 1, 'BIRM', 1, 1, 'ATU112233', 'INSURANCE ', 'lab6', '2024-07-04 12:29:50'),
+(20, 1, 'BAC', 1, 1, 'ATU112233', 'entrepreneurship', '112', '2024-07-04 13:15:35'),
+(21, 1, 'BSP', 1, 1, 'SPU112233', 'Social Protection laws', 'MK 7', '2024-07-05 00:24:27'),
+(22, 1, 'BAED', 3, 2, 'AFU08771', 'INSURANCE ', 'UTL_H', '2024-07-05 00:35:03'),
+(23, 0, 'BCS', 1, 1, 'AFU08771', 'advanced web', '112', '2024-07-05 00:35:35');
 
 -- --------------------------------------------------------
 
@@ -115,6 +146,12 @@ INSERT INTO `teachers` (`id`, `name`, `email`, `password`) VALUES
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `attendance`
 --
 ALTER TABLE `attendance`
@@ -137,16 +174,22 @@ ALTER TABLE `teachers`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `exam`
 --
 ALTER TABLE `exam`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `teachers`

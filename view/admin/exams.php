@@ -1,13 +1,8 @@
 <?php
 include '../../control/connection.php';
-
-session_start();
-if(!isset($_SESSION['id'])){
-    header('Location : ../../');
-}else{
-    $examiner=$_SESSION['id'];
-}
-$sql = "SELECT * FROM exam where examiner='$examiner'  order by date desc limit 1 ";
+$examiner=$_GET['id'];
+$exam=$_GET['exam'];
+$sql = "SELECT * FROM exam where examiner='$examiner' and id=$exam ";
 $result = $conn->query($sql);
 
 $sql3 = "SELECT * FROM teachers where id= $examiner ";
@@ -46,7 +41,15 @@ $result3 = $conn->query($sql3);
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><button class="btn btn-link d-md-none  me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button></div>
+                    <div class="container-fluid"><button class="btn btn-link d-md-none  me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                    <button class="btn btn-outline-primary" onclick="location.href='./dashboard.php'">
+<svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-backspace">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M20 6a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-11l-5 -5a1.5 1.5 0 0 1 0 -2l5 -5Z"></path>
+        <path d="M12 10l4 4m0 -4l-4 4"></path>
+    </svg>
+                    </button>
+                  </div>
                 </nav>
 
                 <div class="container-fluid">
@@ -147,7 +150,7 @@ echo '
     <tbody>
     <?php  
     $i=1; 
- $sql1 = "SELECT * FROM attendance ";
+ $sql1 = "SELECT * FROM attendance inner join exam on exam.id=attendance.exam where examiner=$examiner and exam.id=$exam";
  $result1 = $conn->query($sql1);
  while($row1 = $result1->fetch_assoc()) {
    $id=$row1['id'];

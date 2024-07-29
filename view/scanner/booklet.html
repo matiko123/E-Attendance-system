@@ -1,13 +1,9 @@
-<?php
-$exam =$_GET['exam'];
-$regno =$_GET['id'];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script nomodule="" defer="" src="../scanner/js/index.runtime.0ba3fbea.js"></script>
-    <script type="module" src="../scanner/js/index.runtime.7930a9c0.js"></script>
+    <script nomodule="" defer="" src="js/index.runtime.0ba3fbea.js"></script>
+    <script type="module" src="js/index.runtime.7930a9c0.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +11,12 @@ $regno =$_GET['id'];
     <meta name="description"
         content="A Progressive Web Application (PWA) that scans barcodes of various formats, using the Barcode Detection API.">
     <link rel="icon shortcut" href="favicon.a05bdb0a.ico">
-    <link rel="apple-touch-icon" href="../scanner/images/apple-touch-icon.cbfc4d72.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.cbfc4d72.png">
     <link rel="manifest" href="manifest.webmanifest">
     <meta name="theme-color" content="#212529">
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="../scanner/css/index.83054abb.css">
-    <link rel="stylesheet" href="../scanner/css/index.96d2ebb1.css">
+    <link rel="stylesheet" href="css/index.83054abb.css">
+    <link rel="stylesheet" href="css/index.96d2ebb1.css">
 </head>
 
 <body> <noscript>
@@ -147,7 +143,7 @@ $regno =$_GET['id'];
         <div id="toastContainer"></div>
     </div>
     <div class="container"> <a-tab-group no-scroll-controls="" no-tab-cycling=""> <a-tab slot="tab" role="heading"
-                id="cameraTab" style="display:none"> <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                id="cameraTab" > <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
                     class="bi bi-webcam" viewBox="0 0 16 16" style="display:none">
                     <path
                         d="M0 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H9.269c.144.162.33.324.531.475a6.785 6.785 0 0 0 .907.57l.014.006.003.002A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.224-.947l.003-.002.014-.007a4.473 4.473 0 0 0 .268-.148 6.75 6.75 0 0 0 .639-.421c.2-.15.387-.313.531-.475H2a2 2 0 0 1-2-2V6Zm2-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H2Z">
@@ -226,7 +222,7 @@ $regno =$_GET['id'];
                 <button class="results" onclick="pasteAndDisplay('cameraResults')" style="background-color: rgb(4, 115, 174);"> 
                     Proceed
                 </button>
-            </a-tab-panel> <a-tab slot="tab" role="heading" id="fileTab" style="display:none"> <svg width="18" height="18"
+            </a-tab-panel> <a-tab slot="tab" role="heading" id="fileTab"> <svg width="18" height="18"
                     viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -278,13 +274,13 @@ $regno =$_GET['id'];
     <script>
         function pasteAndDisplay(scanResult) {
                var text = document.getElementById(scanResult).innerText;
-               location.href="../../control/attendance.php?exam=<?php echo $exam ?>&id=<?php echo $regno ?>&bookno="+text;
+                alert("End of scanning")
         }
         </script>
-    <script src="../scanner/js/index.bb1ce697.js" type="module"></script>
-    <script src="../scanner/js/index.98a7b582.js" nomodule="" defer=""></script>
-    <script src="../scanner/js/index.ad39ef8d.js" type="module"></script>
-    <script src="../scanner/js/index.7cafa558.js" nomodule="" defer=""></script>
+    <script src="js/index.bb1ce697.js" type="module"></script>
+    <script src="js/index.98a7b582.js" nomodule="" defer=""></script>
+    <script src="js/index.ad39ef8d.js" type="module"></script>
+    <script src="js/index.7cafa558.js" nomodule="" defer=""></script>
 </body>
 
 </html>

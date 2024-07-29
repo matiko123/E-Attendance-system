@@ -32,7 +32,7 @@ if ($conn->query($sql) === TRUE) {
   </div>
   </body>
   </html>';
-  echo "<script>window.location.href='../view/id_scan/?id=$examiner';</script>";
+  header('Location: ../view/id_scan/');
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
